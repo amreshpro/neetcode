@@ -2,7 +2,9 @@
 public class BubbleSort {
    public static int[] bubbleSort(int[] arr){
        for(int i = 0; i < arr.length; i++){
-           for(int j = 0; j < arr.length-1 ; j++){
+          // arr.length - 1 is brute force approach
+          // in bubble sort - arr.lenth - 1 - i  because outer sort one element every time wo don't to check it again and again 
+           for(int j = 0; j < arr.length-1 - i ; j++){
                if(arr[j]>arr[j+1]){
                    int temp = arr[j];
                    arr[j]= arr[j+1];
