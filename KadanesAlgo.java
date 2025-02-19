@@ -6,6 +6,9 @@ public class KadanesAlgo {
         for(int i = 1; i < arr.length; i++){
             currentSum = Math.max(arr[i],currentSum + arr[i]);
             maxSum = Math.max(maxSum,currentSum);
+            if( currentSum < 0 ){
+                currentSum = 0;
+            }
         }
         
         return maxSum;
@@ -18,14 +21,14 @@ public class KadanesAlgo {
              int sum = 0;
             for(int j = i; j < arr.length; j++){
                 sum += arr[j];
-            }
-            maxSum= Math.max(sum,maxSum);
+                maxSum= Math.max(sum,maxSum);
+            }   
         }
         return maxSum;
     }
     public static void main(String ... args){
      
-        int[] arr = {5,4,3,2,1,0};
+        int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
         
         int res = bruteForce(arr);
         int res2 = kadanesAlgoSum(arr);
